@@ -1,0 +1,9 @@
+{
+  "name": "auto-screenshot",
+  "version": "1.0.0",
+  "description": "Auto screenshot.",
+  "main": "index.js",
+  "repository": "https://github.com/butchi/auto-screenshot",
+  "author": "IWABUCHI Yuki butchi",
+  "license": "MIT"
+}
