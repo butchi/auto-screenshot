@@ -1,0 +1,2 @@
+# auto-screenshot
+Auto screenshot.
