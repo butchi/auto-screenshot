@@ -1,1 +1,1 @@
-~/screenshot/auto-ss/exec.sh
+/path/to/exec.sh
