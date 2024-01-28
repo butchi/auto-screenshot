@@ -1,10 +1,12 @@
-const screenshot = require('desktop-screenshot')
-const { DateTime } = require('luxon')
+import screenshot from 'desktop-screenshot'
+import { DateTime } from 'luxon'
 
-require('dotenv').config()
 const { SAVE_DIR, DURATION_MIN, TIME_FORMAT } = process.env
+import dotenv from 'dotenv'
 
 const intv = setInterval(_ => {
+dotenv.config()
+const handler = _ => setInterval(_ => {
   const fileName = DateTime.local().toFormat(TIME_FORMAT)
 
   screenshot(`${SAVE_DIR}${fileName}.png`, (error, _complete) => {
@@ -15,3 +17,5 @@ const intv = setInterval(_ => {
     }
   })
 }, DURATION_MIN * 60 * 1000)
+
+handler()
