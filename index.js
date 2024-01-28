@@ -1,21 +1,23 @@
 import screenshot from 'desktop-screenshot'
 import { DateTime } from 'luxon'
 
-const { SAVE_DIR, DURATION_MIN, TIME_FORMAT } = process.env
 import dotenv from 'dotenv'
 
-const intv = setInterval(_ => {
 dotenv.config()
+const { SAVE_DIR, FILE_EXT, DURATION_MS, TIME_FORMAT } = process.env
+
 const handler = _ => setInterval(_ => {
   const fileName = DateTime.local().toFormat(TIME_FORMAT)
+  const saveDir = SAVE_DIR.replace(/[\/\\]$/, '')
+  const filePath = `${saveDir}/${fileName}.${FILE_EXT}`
 
-  screenshot(`${SAVE_DIR}${fileName}.png`, (error, _complete) => {
+  screenshot(filePath, (error, _complete) => {
     if (error) {
-      console.log("Screenshot failed", error)
+      console.log('Screenshot failed', error)
     } else {
-      console.log('saved: ' + fileName)
+      console.log('saved: ' + filePath)
     }
   })
-}, DURATION_MIN * 60 * 1000)
+}, DURATION_MS)
 
 handler()
