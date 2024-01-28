@@ -7,6 +7,9 @@
   "repository": "https://github.com/butchi/auto-screenshot",
   "author": "IWABUCHI Yuki butchi",
   "license": "MIT",
+  "scripts": {
+    "start": "node index.js"
+  },
   "dependencies": {
     "desktop-screenshot": "^0.1.1",
     "dotenv": "^16.4.1",
