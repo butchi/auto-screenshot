@@ -12,12 +12,14 @@ const handler = _ =>
         const fileName = dateNow.toFormat(TIME_FORMAT)
         const saveDir = SAVE_DIR.replace(/[\/\\]$/, '')
         const filePath = `${saveDir}/${fileName}.${FILE_EXT}`
+        const nextTime = dateNow.plus({ millisecond: DURATION_MS })
 
         screenshot(filePath, (error, _complete) => {
             if (error) {
                 console.log('Screenshot failed', error)
             } else {
                 console.log('Saved: ' + filePath)
+                console.log('Next: ' + nextTime.toFormat('HH:mm:ss'))
             }
         })
     }, DURATION_MS)
