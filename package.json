@@ -11,8 +11,9 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "desktop-screenshot": "^0.1.1",
     "dotenv": "^16.4.1",
-    "luxon": "^3.4.4"
+    "luxon": "^3.4.4",
+    "screenshot-desktop": "^1.15.0",
+    "sharp": "^0.33.5"
   }
 }
