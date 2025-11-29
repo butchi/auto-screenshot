@@ -71,6 +71,8 @@ const handler = async _ => {
                 console.log('Screenshot failed', err)
             })
     }, millisecond)
+
+    console.log('Screenshot started')
 }
 
 handler()
